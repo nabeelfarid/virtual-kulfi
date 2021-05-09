@@ -14,7 +14,7 @@ const FormikMuiTextField: React.FC<FormikMuiTextFieldProps> = (props) => {
       {...props}
       {...field}
       error={meta.touched && Boolean(meta.error)}
-      helperText={meta.touched && meta.error}
+      // helperText={meta.touched && meta.error}
     />
   );
 };

@@ -10,8 +10,8 @@ const Kulfi: React.FC<KulfiProps> = ({
   colorTop = "#d52358",
   colorMiddle = "#e95946",
   colorBottom = "#deaa43",
-  width = "163",
-  height = "431",
+  width = 163,
+  height = 431,
 }) => {
   return (
     <svg

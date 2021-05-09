@@ -4,26 +4,25 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Box, Container, Divider, Link, Typography } from "@material-ui/core";
 import Header from "./header";
 
-const Layout = ({ pathname, children }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          subtitle
           repo
+          author
         }
       }
     }
   `);
 
   return (
-    <>    
-      <Header
-        siteTitle={data.site.siteMetadata?.title}
-        repo={data.site.siteMetadata?.repo}
-      />
+    <>
       <Container maxWidth="md">
-        <Box mt={2}>
+        <Header siteMetadata={data.site.siteMetadata} />
+        <Box>
           <main>{children}</main>
           <footer>
             <Box mt={5}>
@@ -35,6 +34,12 @@ const Layout = ({ pathname, children }) => {
                   <Link color="primary" href="https://www.gatsbyjs.com">
                     Gatsby
                   </Link>
+                  {", hosted on "}
+                  <Link color="primary" href="https://www.gatsbyjs.com">
+                    Netlify
+                  </Link>
+                  {", by "}
+                  {data.site.siteMetadata.author}
                 </Typography>
               </Box>
             </Box>

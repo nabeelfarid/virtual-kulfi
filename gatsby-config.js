@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Virtual Kulfi`,
+    subtitle: `because we all know someone who deserves some sugar 🍭`,
     description: `A place to grab a virtual Kulfi because we all know someone who deserves some sugar.`,
-    author: `Nabeel Farid`,
+    author: `Nomadic Nabeel`,
     repo: "https://github.com/nabeelfarid/virtual-kulfi",
   },
   plugins: [

@@ -8,7 +8,7 @@ import {
 import fetch from "cross-fetch";
 
 const httpLink = new HttpLink({
-  uri: "/.netlify/functions/bookmarker",
+  uri: "/.netlify/functions/graphqlapi",
   // add isomorphic-fetch to your dependencies since apollo looks for fetch to make HTTP requests
   // https://github.com/gatsbyjs/gatsby/issues/11225#issuecomment-457211628
   fetch,

@@ -1,0 +1,13 @@
+CreateIndex({
+  name: "kulfis_by_shortId",
+  source: Collection("Kulfis"),
+  terms: [
+    {
+      field: ["data", "shortId"]
+    }
+  ]
+}
+
+---------------------------
+
+CreateIndex({ name: "kulfis_all", source: Collection("Kulfis") })
