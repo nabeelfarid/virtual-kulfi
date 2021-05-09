@@ -24,9 +24,26 @@ import { navigate } from "gatsby";
 import { gql, useMutation } from "@apollo/client";
 
 const CREATE_KULFI = gql`
-  mutation CreateKulfi($to: String!, $from: String!, $message: String!) {
-    createKulfi(to: $to, from: $from, message: $message) {
+  mutation CreateKulfi(
+    $colorTop: String!
+    $colorMiddle: String!
+    $colorBottom: String!
+    $to: String!
+    $from: String!
+    $message: String!
+  ) {
+    createKulfi(
+      colorTop: $colorTop
+      colorMiddle: $colorMiddle
+      colorBottom: $colorBottom
+      to: $to
+      from: $from
+      message: $message
+    ) {
       id
+      colorTop
+      colorMiddle
+      colorBottom
       to
       from
       message
@@ -38,6 +55,9 @@ const CREATE_KULFI = gql`
 // markup
 const CreatePage = () => {
   const theme = useTheme();
+  const [colorTop, setColorTop] = React.useState("#d52358");
+  const [colorMiddle, setColorMiddle] = React.useState("#e95946");
+  const [colorBottom, setColorBottom] = React.useState("#deaa43");
   const [createKulfi, { loading: createKulfiLoading }] = useMutation(
     CREATE_KULFI
   );
@@ -56,6 +76,9 @@ const CreatePage = () => {
     try {
       var kulfi = await createKulfi({
         variables: {
+          colorTop,
+          colorBottom,
+          colorMiddle,
           to: values.to,
           from: values.from,
           message: values.message,
@@ -75,7 +98,12 @@ const CreatePage = () => {
       <Box mx="auto" textAlign="center">
         <Grid container>
           <Grid item xs={6} sm={3}>
-            <Kulfi height={350} />
+            <Kulfi
+              height={350}
+              colorTop={colorTop}
+              colorMiddle={colorMiddle}
+              colorBottom={colorBottom}
+            />
           </Grid>
           <Grid item xs={6} sm={3}>
             <Box
@@ -85,9 +113,27 @@ const CreatePage = () => {
               justifyContent="space-around"
               style={{ height: "100%" }}
             >
-              <input type="color"></input>
-              <input type="color"></input>
-              <input type="color"></input>
+              <input
+                type="color"
+                value={colorTop}
+                onChange={(e) => {
+                  setColorTop(e.target.value);
+                }}
+              />
+              <input
+                type="color"
+                value={colorMiddle}
+                onChange={(e) => {
+                  setColorMiddle(e.target.value);
+                }}
+              />
+              <input
+                type="color"
+                value={colorBottom}
+                onChange={(e) => {
+                  setColorBottom(e.target.value);
+                }}
+              />
               <div></div>
             </Box>
           </Grid>

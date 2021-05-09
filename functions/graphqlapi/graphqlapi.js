@@ -12,11 +12,21 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createKulfi(to: String!, from: String!, message: String!): Kulfi
+    createKulfi(
+      colorTop: String!
+      colorMiddle: String!
+      colorBottom: String!
+      to: String!
+      from: String!
+      message: String!
+    ): Kulfi
   }
 
   type Kulfi {
     id: ID!
+    colorTop: String!
+    colorMiddle: String!
+    colorBottom: String!
     to: String!
     from: String!
     message: String!
@@ -36,11 +46,8 @@ const resolvers = {
       console.log("allkulfis", results);
 
       return results.data.map((kulfi) => ({
+        ...kulfi.data,
         id: kulfi.ref.id,
-        to: kulfi.data.to,
-        from: kulfi.data.from,
-        message: kulfi.data.message,
-        shortId: kulfi.data.shortId,
       }));
     },
     getKulfiByShortId: async (_parent, args) => {
@@ -60,6 +67,9 @@ const resolvers = {
       const result = await fdbClient.query(
         q.Create(q.Collection("Kulfis"), {
           data: {
+            colorTop: args.colorTop,
+            colorMiddle: args.colorMiddle,
+            colorBottom: args.colorBottom,
             to: args.to,
             from: args.from,
             message: args.message,

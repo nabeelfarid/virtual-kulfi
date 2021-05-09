@@ -35,15 +35,15 @@ const Kulfi: React.FC<KulfiProps> = ({
       <g
         id="Page-2"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g id="Lolly">
           <g
             id="handle"
             transform="translate(65.000000, 137.000000)"
-            fill-rule="nonzero"
+            fillRule="nonzero"
           >
             <rect
               id="Rectangle"
@@ -65,7 +65,7 @@ const Kulfi: React.FC<KulfiProps> = ({
             ></rect>
             <polygon
               id="Rectangle-Copy-3"
-              fill-opacity="0.181584013"
+              fillOpacity="0.181584013"
               fill="#8C0040"
               points="0 200 32 200 32 218 0 223.801515"
             ></polygon>
@@ -76,13 +76,13 @@ const Kulfi: React.FC<KulfiProps> = ({
           <use
             className="lollyBottom"
             fill={colorBottom}
-            fill-rule="nonzero"
+            fillRule="nonzero"
             href="#path-1"
           ></use>
           <rect
             className="lollyTop"
             fill={colorTop}
-            fill-rule="nonzero"
+            fillRule="nonzero"
             mask="url(#mask-2)"
             x="-25"
             y="-9"
@@ -92,7 +92,7 @@ const Kulfi: React.FC<KulfiProps> = ({
           <rect
             className="lollyMiddle"
             fill={colorMiddle}
-            fill-rule="nonzero"
+            fillRule="nonzero"
             mask="url(#mask-2)"
             x="-29"
             y="113"
@@ -103,7 +103,7 @@ const Kulfi: React.FC<KulfiProps> = ({
             d="M79.7697726,3.19744231e-14 C63.468207,2.89798741e-14 49.9517074,12.6254516 48.8417198,28.8891833 L30.0731738,303.889183 C28.9074019,320.970275 41.8093181,335.762281 58.89041,336.928053 C59.5929941,336.976004 60.2970081,337 61.0012266,337 L17,337 C-0.120827245,337 -14,323.120827 -14,306 C-14,305.265258 -13.9738784,304.530748 -13.9216848,303.797862 L5.66288496,28.7978622 C6.81839036,12.5726406 20.3182545,1.0093501e-14 36.5845697,7.10542736e-15 L79.7697726,2.77347066e-14 Z"
             id="shade"
             fill="#67000D"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="0.0961449033"
             mask="url(#mask-2)"
           ></path>
@@ -113,7 +113,7 @@ const Kulfi: React.FC<KulfiProps> = ({
           <use
             id="shine"
             fill="#FFFFFF"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="0.113420759"
             href="#path-3"
           ></use>
@@ -122,7 +122,7 @@ const Kulfi: React.FC<KulfiProps> = ({
             opacity="0.600144159"
             transform="translate(130.971719, 34.105410) rotate(-94.000000) translate(-130.971719, -34.105410) translate(118.971719, 32.105410)"
             fill="#FFFFFF"
-            fill-rule="nonzero"
+            fillRule="nonzero"
           >
             <rect
               id="Rectangle"
@@ -145,7 +145,7 @@ const Kulfi: React.FC<KulfiProps> = ({
             d="M97,337 L65,337 L65,155 L65,153 C65,144.163444 72.163444,137 81,137 C89.836556,137 97,144.163444 97,153 L97,155 L97,337 Z"
             id="frozenhandle"
             fill="#A7563C"
-            fill-rule="nonzero"
+            fillRule="nonzero"
             opacity="0.0615234375"
           ></path>
         </g>
