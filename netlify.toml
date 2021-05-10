@@ -5,3 +5,26 @@
 
 [functions]
   directory = "functions/"
+
+[[redirects]]
+  from = "/kulfi/*"
+  to = "/dynamickulfi/:splat"
+  status = 302
+  
+# A splat allows you to redirect traffic based on a URL’s suffix. For example: /docs/* /blog/:splat 301
+# In this example, /docs/article1 would redirect to /blog/article1 and /docs/contact/form would redirect to /blog/contact/form, etc.
+# It’s important to note that a splat can only be used at the end of a URL. 
+# If you’re trying to use a splat in the middle of a URL, you should take a look at placeholders instead (https://docs.netlify.com/routing/redirects/redirect-options/#placeholders)
+
+# By default, redirects won’t be applied if there’s a file with the same
+# path as the one defined in the `from` property. Setting `force` to `true`
+# will make the redirect rule take precedence over any existing files.
+# force = true
+
+# When nothing is matched, This really is a 404
+[[redirects]]
+  from = "/*"
+  to = "/melted"
+  force = false
+  status = 404
+

@@ -54,7 +54,7 @@ const resolvers = {
       const result = await fdbClient.query(
         q.Get(q.Match(q.Index("kulfis_by_shortId"), args.shortId))
       );
-      console.log(result);
+      console.log("getAllKulfis", result);
 
       return {
         ...result.data,
@@ -77,7 +77,7 @@ const resolvers = {
           },
         })
       );
-      console.log("Craete kulfi", result);
+      console.log("Create kulfi", result);
       return {
         ...result.data,
         id: result.ref.id,

@@ -1,20 +1,21 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import Kulfi from "../components/kulfi";
+import KulfiSvg from "../components/kulfiSvg";
 import { Box, Grid, useTheme, Icon } from "@material-ui/core";
 import { Button } from "gatsby-material-ui-components";
 import { getRandomColor } from "../utils/index";
+import useSiteMetadata from "../hooks/useSiteMetaData";
 // markup
 const IndexPage = () => {
-  const theme = useTheme();
+  const { slogan } = useSiteMetadata();
   return (
     <Layout>
-      <Seo title="Virtual Kulfis for all!" />
+      <Seo title={slogan} />
       <Box maxWidth={600} mx="auto" textAlign="center">
         <Grid container>
           <Grid item xs={6} sm={3}>
-            <Kulfi
+            <KulfiSvg
               height="300"
               colorTop={getRandomColor()}
               colorBottom={getRandomColor()}
@@ -22,7 +23,7 @@ const IndexPage = () => {
             />
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Kulfi
+            <KulfiSvg
               height="300"
               colorTop={getRandomColor()}
               colorBottom={getRandomColor()}
@@ -30,7 +31,7 @@ const IndexPage = () => {
             />
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Kulfi
+            <KulfiSvg
               height="300"
               colorTop={getRandomColor()}
               colorBottom={getRandomColor()}
@@ -38,7 +39,7 @@ const IndexPage = () => {
             />
           </Grid>
           <Grid item xs={6} sm={3}>
-            <Kulfi height="300" />
+            <KulfiSvg height="300" />
           </Grid>
           <Grid item xs={12}>
             <Box my={2} mx="auto" maxWidth={300}>

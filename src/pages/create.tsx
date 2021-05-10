@@ -1,28 +1,24 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import Kulfi from "../components/kulfi";
+import KulfiSvg from "../components/kulfiSvg";
 import {
   Box,
   Grid,
   useTheme,
-  Icon,
   Card,
-  Typography,
-  Avatar,
-  CardHeader,
   CardContent,
   CircularProgress,
   makeStyles,
 } from "@material-ui/core";
 import { Button } from "gatsby-material-ui-components";
-import { LockOpen } from "@material-ui/icons";
 import { green } from "@material-ui/core/colors";
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import FormikMuiTextField from "../components/FormikMuiTextField";
 import { navigate } from "gatsby";
 import { gql, useMutation } from "@apollo/client";
+import useSiteMetadata from "../hooks/useSiteMetaData";
 
 const CREATE_KULFI = gql`
   mutation CreateKulfi(
@@ -85,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
 const CreatePage = () => {
   const theme = useTheme();
   const classes = useStyles();
+  const { slogan } = useSiteMetadata();
   const [colorTop, setColorTop] = React.useState("#d52358");
   const [colorMiddle, setColorMiddle] = React.useState("#e95946");
   const [colorBottom, setColorBottom] = React.useState("#deaa43");
@@ -115,6 +112,7 @@ const CreatePage = () => {
         },
       });
       console.log("Create Kulfi Successfully", kulfi);
+      await navigate(`/dynamickulfi/${kulfi.data.createKulfi.shortId}`);
     } catch (error) {
       console.log("Create Kulfi Error", error);
     } finally {
@@ -124,11 +122,11 @@ const CreatePage = () => {
 
   return (
     <Layout>
-      <Seo title="Virtual Kulfis for all!" />
+      <Seo title={slogan} />
       <Box mx="auto" textAlign="center">
         <Grid container>
           <Grid item xs={6} sm={3}>
-            <Kulfi
+            <KulfiSvg
               height={350}
               colorTop={colorTop}
               colorMiddle={colorMiddle}

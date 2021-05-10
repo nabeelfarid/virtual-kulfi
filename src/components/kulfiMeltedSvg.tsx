@@ -1,9 +1,9 @@
 import * as React from "react";
-interface KulfiMeltedProps {
+interface KulfiMeltedSvgProps {
   width?: number;
   height?: number;
 }
-const KulfiMelted: React.FC<KulfiMeltedProps> = ({
+const KulfiMeltedSvg: React.FC<KulfiMeltedSvgProps> = ({
   width = 263,
   height = 384,
 }) => {
@@ -93,9 +93,9 @@ const KulfiMelted: React.FC<KulfiMeltedProps> = ({
             id="Knock-knock.-Who's-t"
             opacity="0.614164807"
             transform="translate(119.000000, 110.500000) rotate(-90.000000) translate(-119.000000, -110.500000) "
-            font-family="Arial-BoldMT, Arial"
-            font-size="11"
-            font-weight="bold"
+            fontFamily="Arial-BoldMT, Arial"
+            fontSize="11"
+            fontWeight="bold"
             fill="#FABAA5"
           >
             <tspan x="34.864502" y="114.5">
@@ -106,9 +106,9 @@ const KulfiMelted: React.FC<KulfiMeltedProps> = ({
             id="Knock-knock.-Who's-t"
             opacity="0.472330729"
             transform="translate(119.000000, 111.500000) rotate(-90.000000) translate(-119.000000, -111.500000) "
-            font-family="Arial-BoldMT, Arial"
-            font-size="11"
-            font-weight="bold"
+            fontFamily="Arial-BoldMT, Arial"
+            fontSize="11"
+            fontWeight="bold"
             fill="#C06C50"
           >
             <tspan x="34.864502" y="115.5">
@@ -121,4 +121,4 @@ const KulfiMelted: React.FC<KulfiMeltedProps> = ({
   );
 };
 
-export default KulfiMelted;
+export default KulfiMeltedSvg;

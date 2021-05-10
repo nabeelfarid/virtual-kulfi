@@ -1,15 +1,15 @@
 import * as React from "react";
 import { RouteComponentProps } from "@reach/router";
-import KulfiMelted from "../components/kulfiMelted";
+import KulfiMeltedSvg from "./kulfiMeltedSvg";
 import { Box, Grid, Icon, Typography } from "@material-ui/core";
 import { Button } from "gatsby-material-ui-components";
 
-const Melted = (props: RouteComponentProps) => {
+const KulfiNotFound = (props: RouteComponentProps) => {
   return (
     <Box mx="auto" textAlign="center">
       <Grid container spacing={4}>
         <Grid item xs={12}>
-          <KulfiMelted />
+          <KulfiMeltedSvg />
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h4" color="textSecondary">
@@ -18,14 +18,13 @@ const Melted = (props: RouteComponentProps) => {
         </Grid>
         <Grid item xs={12}>
           <Button
-            fullWidth
             size="large"
             variant="contained"
             color="secondary"
             to="/create"
             endIcon={<Icon>send</Icon>}
           >
-            Make a new Kulfi to send to a frend
+            Prepare a new Kulfi to send to a frend
           </Button>
         </Grid>
       </Grid>
@@ -33,4 +32,4 @@ const Melted = (props: RouteComponentProps) => {
   );
 };
 
-export default Melted;
+export default KulfiNotFound;

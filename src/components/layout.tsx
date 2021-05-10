@@ -3,29 +3,19 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import { Box, Container, Divider, Link, Typography } from "@material-ui/core";
 import Header from "./header";
+import useSiteMetadata from "../hooks/useSiteMetaData";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          subtitle
-          repo
-          author
-        }
-      }
-    }
-  `);
+  const siteMetadata = useSiteMetadata();
 
   return (
     <>
       <Container maxWidth="md">
-        <Header siteMetadata={data.site.siteMetadata} />
+        <Header siteMetadata={siteMetadata} />
         <Box>
           <main>{children}</main>
           <footer>
-            <Box mt={5}>
+            <Box mt={5} textAlign="center">
               <Divider />
               <Box mt={1}>
                 <Typography>
@@ -39,7 +29,7 @@ const Layout = ({ children }) => {
                     Netlify
                   </Link>
                   {", by "}
-                  {data.site.siteMetadata.author}
+                  {siteMetadata.author}
                 </Typography>
               </Box>
             </Box>

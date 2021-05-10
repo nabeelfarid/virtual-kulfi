@@ -2,17 +2,20 @@ import * as React from "react";
 import { Router, Redirect } from "@reach/router";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import ViewKulfi from "../components/viewKulfi";
-import Melted from "../components/melted";
+import KulfiMaker from "../components/kulfiMaker";
+import KulfiNotFound from "../components/kulfiNotFound";
+import useSiteMetadata from "../hooks/useSiteMetaData";
 
 // markup
 const KulfiPage = () => {
+  const { slogan } = useSiteMetadata();
+
   return (
     <Layout>
-      <Seo title="Virtual Kulfis for all!" />
+      <Seo title={slogan} />
       <Router basepath="/dynamickulfi">
-        <ViewKulfi path="/:shortId" />
-        <Melted default />
+        <KulfiMaker path="/:shortId" />
+        <KulfiNotFound default />
       </Router>
     </Layout>
   );

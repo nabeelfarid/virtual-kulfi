@@ -1,12 +1,12 @@
 import * as React from "react";
-interface KulfiProps {
+interface KulfiSvgProps {
   colorTop?: string;
   colorMiddle?: string;
   colorBottom?: string;
   width?: number;
   height?: number;
 }
-const Kulfi: React.FC<KulfiProps> = ({
+const KulfiSvg: React.FC<KulfiSvgProps> = ({
   colorTop = "#d52358",
   colorMiddle = "#e95946",
   colorBottom = "#deaa43",
@@ -154,4 +154,4 @@ const Kulfi: React.FC<KulfiProps> = ({
   );
 };
 
-export default Kulfi;
+export default KulfiSvg;
