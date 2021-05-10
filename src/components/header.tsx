@@ -1,17 +1,6 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
-import {
-  AppBar,
-  IconButton,
-  Toolbar,
-  Typography,
-  Box,
-  Tooltip,
-  useTheme,
-  Grid,
-} from "@material-ui/core";
-import { GitHub, Home } from "@material-ui/icons";
-import { IconButton as GatsbyIconButton } from "gatsby-material-ui-components";
+import { Typography, Box, useTheme, Grid } from "@material-ui/core";
 import GithubCorner from "react-github-corner";
 
 interface HeaderProps {

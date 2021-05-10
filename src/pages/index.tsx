@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import KulfiSvg from "../components/kulfiSvg";
-import { Box, Grid, useTheme, Icon } from "@material-ui/core";
+import { Box, Grid, Icon } from "@material-ui/core";
 import { Button } from "gatsby-material-ui-components";
 import { getRandomColor } from "../utils/index";
 import useSiteMetadata from "../hooks/useSiteMetaData";
