@@ -13,6 +13,7 @@ import {
   CardHeader,
   CardContent,
   CircularProgress,
+  makeStyles,
 } from "@material-ui/core";
 import { Button } from "gatsby-material-ui-components";
 import { LockOpen } from "@material-ui/icons";
@@ -52,9 +53,38 @@ const CREATE_KULFI = gql`
   }
 `;
 
+const useStyles = makeStyles((theme) => ({
+  green: {
+    color: "#fff",
+    backgroundColor: green[500],
+  },
+  colorPickerLabel: {
+    width: 40,
+    height: 40,
+    borderRadius: 24,
+    border: `solid 2px #fff`,
+    display: "block",
+    margin: 30,
+    overflow: "hidden",
+    boxShadow: "red 0 0 14px",
+
+    //   border: solid 2px #fff;
+    //   display: block;
+    //   box-shadow: #000 0 0 14px;
+  },
+  colorPicker: {
+    width: 60,
+    height: 60,
+    marginTop: -10,
+    marginLeft: -10,
+    cursor: "pointer",
+  },
+}));
+
 // markup
 const CreatePage = () => {
   const theme = useTheme();
+  const classes = useStyles();
   const [colorTop, setColorTop] = React.useState("#d52358");
   const [colorMiddle, setColorMiddle] = React.useState("#e95946");
   const [colorBottom, setColorBottom] = React.useState("#deaa43");
@@ -110,30 +140,54 @@ const CreatePage = () => {
               display="flex"
               flexDirection="column"
               alignItems="center"
-              justifyContent="space-around"
+              //   justifyContent="flex-start"
               style={{ height: "100%" }}
             >
-              <input
-                type="color"
-                value={colorTop}
-                onChange={(e) => {
-                  setColorTop(e.target.value);
-                }}
-              />
-              <input
-                type="color"
-                value={colorMiddle}
-                onChange={(e) => {
-                  setColorMiddle(e.target.value);
-                }}
-              />
-              <input
-                type="color"
-                value={colorBottom}
-                onChange={(e) => {
-                  setColorBottom(e.target.value);
-                }}
-              />
+              <label
+                htmlFor="colorPickerTop"
+                className={classes.colorPickerLabel}
+              >
+                <input
+                  id="colorPickerTop"
+                  name="colorPickerTop"
+                  className={classes.colorPicker}
+                  type="color"
+                  value={colorTop}
+                  onChange={(e) => {
+                    setColorTop(e.target.value);
+                  }}
+                />
+              </label>
+              <label
+                htmlFor="colorPickerMiddle"
+                className={classes.colorPickerLabel}
+              >
+                <input
+                  id="colorPickerMiddle"
+                  name="colorPickerMiddle"
+                  className={classes.colorPicker}
+                  type="color"
+                  value={colorMiddle}
+                  onChange={(e) => {
+                    setColorMiddle(e.target.value);
+                  }}
+                />
+              </label>
+              <label
+                htmlFor="colorPickerBottom"
+                className={classes.colorPickerLabel}
+              >
+                <input
+                  id="colorPickerBottom"
+                  name="colorPickerBottom"
+                  className={classes.colorPicker}
+                  type="color"
+                  value={colorBottom}
+                  onChange={(e) => {
+                    setColorBottom(e.target.value);
+                  }}
+                />
+              </label>
               <div></div>
             </Box>
           </Grid>
