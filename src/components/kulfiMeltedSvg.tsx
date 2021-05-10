@@ -63,7 +63,7 @@ const KulfiMeltedSvg: React.FC<KulfiMeltedSvgProps> = ({
             </mask>
             <use
               id="Mask"
-              fill="#000000"
+              fill="white"
               fillRule="nonzero"
               opacity="0.193917411"
               href="#path-1"
@@ -71,7 +71,7 @@ const KulfiMeltedSvg: React.FC<KulfiMeltedSvgProps> = ({
             <path
               d="M104,18.8181818 L109,17 L104,17 L104,-31 L136,-31 L136,48 L104,48 L104,21 L98,21 L104,18.8181818 Z"
               id="Combined-Shape"
-              fill="#000000"
+              fill="white"
               fillRule="nonzero"
               opacity="0.129580543"
               mask="url(#mask-2)"
@@ -83,7 +83,7 @@ const KulfiMeltedSvg: React.FC<KulfiMeltedSvgProps> = ({
             </mask>
             <use
               id="Mask"
-              fill="#000000"
+              fill="white"
               fillRule="nonzero"
               opacity="0.193917411"
               href="#path-3"

@@ -21,10 +21,4 @@
 # will make the redirect rule take precedence over any existing files.
 # force = true
 
-# When nothing is matched, This really is a 404
-[[redirects]]
-  from = "/*"
-  to = "/melted"
-  force = false
-  status = 404
 
