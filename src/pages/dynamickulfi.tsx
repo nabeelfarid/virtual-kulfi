@@ -14,8 +14,10 @@ const KulfiPage = () => {
     <Layout>
       <Seo title={slogan} />
       <Router basepath="/dynamickulfi">
+        {/* <KulfiMakerLoading path="/" /> */}
+
         <KulfiMaker path="/:shortId" />
-        <KulfiNotFound default />
+        {/* <KulfiNotFound default /> */}
       </Router>
     </Layout>
   );
