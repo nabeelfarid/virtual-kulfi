@@ -14,7 +14,7 @@
 
 [[redirects]]
   from = "/dynamickulfi/*"
-  to = "/dynamickulfi/:splat"
+  to = "/dynamickulfi/index.html"
   status = 200
   force = false
   
