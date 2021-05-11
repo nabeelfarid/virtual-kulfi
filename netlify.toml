@@ -29,9 +29,9 @@
 # force = true
 
 # Real 404s can just go directly to NotFound Page:
-[[redirects]]
-  from = "/*"
-  to = "/melted/"
-  status = 404
-  force = false
+# [[redirects]]
+#  to = "/melted/"
+#  from = "/*"
+#  status = 404
+#  force = false
 
