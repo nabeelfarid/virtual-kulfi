@@ -14,8 +14,18 @@ const KulfiPage = () => {
     <Layout>
       <Seo title={slogan} />
       <Router basepath="/dynamickulfi">
+        {/* TODO: Need to figure out what to do with /dynamickulfi/ when entered
+        entered directly into browser // TODO: and the flicker that happens when
+        redirected by /kulfi/* netlify redirect rule or // or may be avoid
+        redirect to this client side routing at all and replace it with a lambda
+        function that responds with // an html template */}
+
         {/* <KulfiMaker path="/*" /> */}
+
         <KulfiMaker path="/:shortId" />
+
+        {/* // TODO : handle all the rest of the urls from entering into browser
+        address e.g. /kulfi/asd/asdasd */}
       </Router>
     </Layout>
   );

@@ -8,7 +8,7 @@ module.exports = {
     subtitle: `because we all know someone who deserves some sugar 🍭`,
     slogan: `Virtual Kulfis for all!`,
     description: `A place to grab a virtual Kulfi because we all know someone who deserves some sugar.`,
-    author: `Nomadic Nabeel`,
+    author: `Nabeel`,
     repo: "https://github.com/nabeelfarid/virtual-kulfi",
     siteUrl: process.env.SITE_URL,
   },
