@@ -10,6 +10,7 @@
   from = "/kulfi/*"
   to = "/dynamickulfi/:splat"
   status = 302
+  force = false
   
 # A splat allows you to redirect traffic based on a URL’s suffix. For example: /docs/* /blog/:splat 301
 # In this example, /docs/article1 would redirect to /blog/article1 and /docs/contact/form would redirect to /blog/contact/form, etc.
@@ -21,4 +22,10 @@
 # will make the redirect rule take precedence over any existing files.
 # force = true
 
+# Real 404s can just go directly to NotFound Page:
+[[redirects]]
+  from = "/*"
+  to = "/melted/"
+  status = 404
+  force = false
 
