@@ -1,4 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server-lambda");
+const axios = require("axios").default;
+
 const faunadb = require("faunadb");
 const shortid = require("shortid");
 
@@ -77,7 +79,10 @@ const resolvers = {
           },
         })
       );
-      console.log("Create kulfi", result);
+      // Trigger a new build to freeze this kulfi forever
+      await axios.post(process.env.BUILD_HOOK);
+
+      console.log("Created kulfi", result);
       return {
         ...result.data,
         id: result.ref.id,
